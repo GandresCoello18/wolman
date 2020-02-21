@@ -1,0 +1,105 @@
+@import '../components//global/global.scss';
+
+.area_login{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    .izquierda{
+        padding: 90px 25px;
+        background-color: $color_principal;
+        color: #fff;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        text-align: center;
+        #circle_abajo_iniciar{
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+        }
+        h5{
+            font-family: 'Anton', sans-serif;
+            font-size: 20px;
+        }
+        p{
+            font-family: 'Anton', sans-serif;
+        }
+        .btn_crea_una_cuenta{
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+            border: 3px solid #fff;
+            position: relative;
+            font-weight: bold;
+            top: 10px;
+            &:hover{
+                background-color: #fff;
+                color: $color_principal;
+                border-color: $color_principal;
+            }
+        }
+    }
+    .derecha{
+        background-color: #fff;;
+        color: $color_principal;
+        padding: 90px 25px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        text-align: center;
+        #circle_arriba_iniciar{
+            position: absolute;
+            top: -40px;
+            right: -30px;
+        }
+        h3{
+            font-family: 'Anton', sans-serif;
+            font-size: 30px;
+        }
+        form{
+            input{
+                border-radius: 15px;
+                color: $color_principal;
+                font-family: 'Anton', sans-serif;
+            }
+            .icon_user{
+                position: absolute;
+                right: 40px;
+                top: 220px;
+            }
+            .icon_eye{
+                position: absolute;
+                right: 40px;
+                top: 270px;
+                cursor: pointer;
+            }
+            .btn_acceder_cuenta{
+                padding: 10px 20px;
+                border-radius: 20px;
+                cursor: pointer;
+                background-color: transparent;
+                color: $color_principal;
+                border: 3px solid $color_principal;
+                position: relative;
+                top: 30px;
+                &:hover{
+                    background-color: $color_principal;
+                    color: #fff;
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.fila_crear_cuenta{
+    position: absolute;
+    top: 402px;
+    left: 10px;
+    width: 100%;
+    display: none;
+}
+
+.fila_acceder_cuenta{
+    opacity: 1;
+}

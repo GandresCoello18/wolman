@@ -1,0 +1,24 @@
+.modelo-area_publicacion{
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+    padding: 5px;
+    .heaer_modelo{
+        span{
+            position: relative;
+            top: 15px;
+        }
+        .user_name{
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            cursor: pointer;
+        }
+        img{
+            cursor: pointer;
+        }
+    }
+    .opciones_modelo{
+        float: right;
+        cursor: pointer;
+    }
+}

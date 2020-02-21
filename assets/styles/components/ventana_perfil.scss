@@ -1,0 +1,61 @@
+@import "global/global";
+
+#area_perfil{
+    background-color: #fff;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    overflow: hidden;
+    #fondo_perfil{
+        padding: 25px;
+        background-color: $color_principal;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 15px;
+            left: 30px;
+            background-color: $color_principal_oscuro;
+            border-radius: 50%;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 15px;
+            left: 170px;
+            background-color: $color_principal_oscuro;
+            border-radius: 50%;
+        }
+    }
+    #descripcion_perfil{
+        background-color: #fff;
+        padding: 10px;
+        figure{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid #cdcdcd;
+            position: absolute;
+            top: 0px;
+            left: 30px;
+            background-color: #fff;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .border_perfil{
+            border-bottom: 1px solid #cdcdcd;
+            padding: 5px 5px 5px 10px;
+        }
+        .cambiar_foto_perfil{
+            color: $color_principal;
+            cursor: pointer;
+        }
+        div{
+            font-weight: bold;
+        }
+    }
+}

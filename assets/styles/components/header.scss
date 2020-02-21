@@ -1,0 +1,70 @@
+@import "global/global";
+
+nav{
+    background-color: $color_principal;
+    .menu-hamburguesa{
+        position: absolute;
+        left: 90%;
+        top: 20px;
+        display: block;
+        z-index: 99;
+        cursor: pointer;
+    }
+    .responsive-mobile{
+        display: none;
+    }
+    .punto-bell{
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        background-color: red;
+        border-radius: 50%;
+        left: 25px;
+        top: 10px;
+    }
+    .area_notification{
+        border: 1px solid $color_principal;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 99;
+        top: 70px;
+        display: none;
+        .iten_notification{
+            border-bottom: 1px solid #cdcdcd;
+            &:hover{
+                background-color: #cdcdcd !important;
+            }
+        }
+    }
+}
+.ui.inverted.menu{
+    background-color: $color_principal !important;
+}
+
+
+@media screen and (min-width: 544px){
+	
+}
+@media screen and (min-width: 768px){
+    nav{
+        .menu-hamburguesa{
+            display: none;
+        }
+        .responsive-mobile{
+            display: block;
+        }
+        .area_notification{
+            left: 600px;
+        }
+    }
+}
+@media screen and (min-width: 992px){
+	nav{
+        .area_notification{
+            left: 740px;
+        }
+    }
+}
+@media screen and (min-width: 1200px){
+	
+}

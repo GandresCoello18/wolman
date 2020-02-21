@@ -1,0 +1,61 @@
+@import 'global/global.scss';
+
+.area_mensaje_directo{
+    background-color: #fff;
+    height: 100vh !important;
+    .contenedor_de_sms{
+        background-image: url(https://img.freepik.com/vector-gratis/elegante-fondo-blanco-lineas-brillantes_1017-17580.jpg?size=626&ext=jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .scroll-chat{
+        overflow-y: scroll;
+        height: 500px;
+        &::-webkit-scrollbar{
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius: 5px;
+            background-color:  $color_principal_oscuro;
+        }
+        .sombra{
+            cursor: pointer;
+            :hover{
+                transition-duration: 0.5s;
+                padding: 5px;
+                border-radius: 5px;
+                color: #fff;
+                background-color: $color_principal;
+                opacity: 0.7;
+            }
+        }
+        .area_create_sms{
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+            background-color: #fff;
+            z-index: 99;
+            padding: 10px;
+            textarea{
+                border: 1px solid $color_principal;
+                color: $color_principal;
+            }
+            button{
+                background-color: transparent;
+                border: 1px solid $color_principal;
+                color: $color_principal; 
+            }
+        }
+    }
+    .contenedor-sms{
+        border-radius: 10px;
+        background-color: $color_principal;
+        color: #fff;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .scroll_medio{
+        height: 100vh !important;
+    }
+}

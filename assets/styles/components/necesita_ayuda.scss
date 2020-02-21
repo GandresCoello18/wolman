@@ -1,0 +1,9 @@
+@import './global/global.scss';
+
+#area_necesita_ayuda{
+    border: 1px solid #cdcdcd;
+    background-color: #fff;
+    .titulo{
+        color: $color_principal_oscuro;
+    }
+}

@@ -1,0 +1,34 @@
+@import '../components/global/global';
+
+.scroll_medio{
+    overflow-y: scroll;
+    height: 500px;
+    .barra_superior{
+        width: 100%;
+        background-color: #fff;
+        padding: 7px;
+    }
+}
+
+.scroll_medio::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll_medio::-webkit-scrollbar-thumb{
+    background-color: $color_principal_oscuro;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 544px){
+	
+}
+@media screen and (min-width: 768px){
+    .scroll_medio{
+        height: 100vh !important;
+    }
+}
+@media screen and (min-width: 992px){
+	
+}
+@media screen and (min-width: 1200px){
+	
+}
