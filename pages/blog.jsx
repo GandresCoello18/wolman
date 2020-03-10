@@ -6,7 +6,9 @@ import Paginacion from '../components/paginacion';
 import Link from 'next/link';
 import LabelComentarios from '../components/label_comentarios';
 import Head from '../components/Header';
+import Seo from '../components/seo';
 import Footer from '../components/footer';
+import { Input } from 'semantic-ui-react';
 import "../assets/styles/container/blog.scss";
 
 
@@ -14,6 +16,7 @@ class Blog extends React.Component{
     render(){
         return(
             <>
+                <Seo title='Blog | Wolman web' />
                 <Head />
                 <section className='container-fluid'>
                     <div className='row'>
@@ -50,7 +53,10 @@ class Blog extends React.Component{
                 </section>
 
                 <section className='container'>
-                    <div className='row mt-4'>
+                    <div className='row mt-4 justify-content-center'>
+                        <form className='col-7 mb-4'>
+                            <Input action={{ icon: 'search' }} name='query' type='search' fluid placeholder='Buscar Post...' />
+                        </form>
                         <div className='col-12 p-2'>
                             <ItemBlog />
                         </div>

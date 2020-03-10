@@ -5,7 +5,7 @@ const BntLike = (props) => {
     return(
         <>
             <Button as='div' labelPosition='right'>
-                <Button icon>
+                <Button icon color='blue'>
                     <Icon name='heart' />
                     Like
                 </Button>

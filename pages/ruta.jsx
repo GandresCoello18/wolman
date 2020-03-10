@@ -3,6 +3,7 @@ import { Accordion, Icon } from 'semantic-ui-react'
 import ListCursosRutas from '../components/list-cursos-rutas';
 import Head from '../components/Header';
 import Footer from '../components/footer';
+import Seo from '../components/seo';
 
 export default class AccordionExampleStyled extends Component {
   state = { activeIndex: 0 }
@@ -20,6 +21,7 @@ export default class AccordionExampleStyled extends Component {
 
     return (
         <>
+            <Seo title='Ruta de aprendizaje | Wolman web' />
             <Head />
             <section className='container'>
                 <div className='row justify-content-center mt-4'>

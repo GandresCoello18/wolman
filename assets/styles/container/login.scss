@@ -47,6 +47,12 @@
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         text-align: center;
+        .session-redes{
+            div{
+                cursor: pointer;
+                margin: 5px;
+            }
+        }
         #circle_arriba_iniciar{
             position: absolute;
             top: -40px;
@@ -65,12 +71,12 @@
             .icon_user{
                 position: absolute;
                 right: 40px;
-                top: 220px;
+                top: 275px;
             }
             .icon_eye{
                 position: absolute;
                 right: 40px;
-                top: 270px;
+                top: 325px;
                 cursor: pointer;
             }
             .btn_acceder_cuenta{

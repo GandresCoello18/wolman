@@ -5,11 +5,13 @@ import Necesita from "../components/necesita_ayuda";
 import BarraSuperior from '../components/barra_superior';
 import FinalHTML from "../components/final-html-css";
 import Head from '../components/Header';
+import Seo from '../components/seo';
 import Footer from '../components/footer';
 
 const ProyectoFinal  = (props) => {
     return(
         <>
+        <Seo title='Proyecto final | Wolman web' />
             <Head />
             <div className="container-fluid mt-4">
                 <div className="row justify-content-between">

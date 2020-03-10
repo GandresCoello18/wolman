@@ -12,7 +12,7 @@ const CardExampleLinkCard = () => (
             <Card.Description>Cuando algunas empresas piensan en estrategias de marketing B2B, piensan principalmente en técnicas directas y externas: mensajes que pueden enviar directamente a los clientes o posibles compradores que hayan identificado</Card.Description>
             <div className='row mt-3 justify-content-center'>
                 <div className='col-5 col-md-3 p-1 p-md-0'>
-                    <strong><LabelAvatar/></strong>
+                    <strong className='ml-md-3'><LabelAvatar/></strong>
                 </div>
                 <div className='col-5 col-md-3 p-1 p-md-0'>
                     <strong><Fecha /></strong>

@@ -11,6 +11,7 @@ import BarraSuperior from '../components/barra_superior';
 import Encuesta from "../components/Encuesta-s-s";
 import "../assets/styles/container/index.scss";
 import "../index.scss";
+import Seo from '../components/seo';
 import Error from './_error.js';
 
 class App extends React.Component{
@@ -27,8 +28,8 @@ class App extends React.Component{
         }
         return(
             <>
+                <Seo title='Wolman | Desarrollo Web | Aplicaciones y sitios' />
                 <Head />
-
                 <div className="container-fluid mt-4">
                     <div className="row justify-content-between">
                         <div className="col-12 col-sm-4 col-md-3 col-lg-2">

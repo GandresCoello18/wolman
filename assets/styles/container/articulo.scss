@@ -1,0 +1,23 @@
+.portada_articulo{
+    background-position: center center;
+    height: 300px;
+    width: 100%;
+    .capa_oscura{
+        width: 110%;
+        height: 100%;
+        position: absolute;
+        left: -15px;
+        background-color: rgba(0,0,0,0.7);
+        h3{
+            position: relative;
+            top: 70%;
+            font-size: 30px;
+            font-family: 'cursive';
+        }
+    }
+}
+
+p{
+    font-size: 1.25em;
+    line-height: 1.6em;
+}

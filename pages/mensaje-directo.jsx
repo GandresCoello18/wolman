@@ -2,11 +2,13 @@ import React from 'react';
 import "../assets/styles/components/mensaje-directo.scss";
 import Head from '../components/Header';
 import Footer from '../components/footer';
+import Seo from '../components/seo';
 import { Comment, Header, Container, Image, FormField, TextArea, Button } from "semantic-ui-react";
 
 const Mensaje = (props) => {
     return(
         <>
+            <Seo title='Mensaje Directo | Wolman web' />
             <Head />
             <div className="row justify-content-center mt-2 p-4 area_mensaje_directo">
                 <div className="col-12 col-md-4 scroll-chat border">

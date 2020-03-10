@@ -6,11 +6,14 @@ import ItemVideo from "../components/item_video";
 import BarraSuperior from '../components/barra_superior';
 import Head from '../components/Header';
 import Footer from '../components/footer';
+import Seo from '../components/seo';
+import "../index.scss";
 
 const Video = (props) => {
 
     return(
         <>
+            <Seo title='Introduccion a JS | Wolman web' />
             <Head />
             <div className="container-fluid mt-4">
                 <div className="row justify-content-between">

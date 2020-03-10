@@ -7,10 +7,12 @@ import { Image, Button, Card } from 'semantic-ui-react';
 import BarraSuperior from '../components/barra_superior';
 import Head from '../components/Header';
 import Footer from '../components/footer';
+import Seo from '../components/seo';
 
 const Proyectos = (props) => {
     return(
         <>
+            <Seo title='Proyectos | Wolman web' />
             <Head />
             <div className="container-fluid mt-4">
                 <div className="row justify-content-between">

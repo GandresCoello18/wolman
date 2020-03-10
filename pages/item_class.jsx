@@ -7,6 +7,7 @@ import ListModelClass from "../components/list_modelo_clases";
 import Head from '../components/Header';
 import Footer from '../components/footer';
 import { Segment } from 'semantic-ui-react';
+import Seo from '../components/seo';
 import "../assets/styles/container/index.scss";
 
 
@@ -15,6 +16,7 @@ const ItemClass = (props) => {
     //console.log(item);
     return(
         <>
+            <Seo title='Clases | Wolman web' />
             <Head />
             <div className="container-fluid mt-4">
                 <div className="row justify-content-between">

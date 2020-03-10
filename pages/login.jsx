@@ -1,8 +1,11 @@
 import React from "react";
 import Head from '../components/Header';
 import Footer from '../components/footer';
-import { Icon } from "semantic-ui-react"; 
+import { Icon } from "semantic-ui-react";
+import Seo from '../components/seo';
 import "../assets/styles/container/login.scss";
+import { Button } from 'semantic-ui-react';
+import axios from 'axios';
 
 
 const Ventana_Crear = () => {
@@ -26,16 +29,28 @@ var ventana_crear = document.querySelector('.fila_crear_cuenta');
     console.log("segunda");
 }
 
+const google = async () => {
+    window.open('/api/auth/google', '_blank');
+}
+
+const twitter = async () => {
+    window.open('/api_T/auth/twitter', '_blank');
+}
+
+const facebook = async () => {
+    window.open('/api_F/auth/facebook', '_blank');
+}
+
 const Login = () => {
     return(
         <>
-
+            <Seo title='Login | Wolman web' />
             <Head />
             <section className="area_login">
                 <div className="row justify-content-center mt-md-3 fila_acceder_cuenta">
                 
                     <div className="col-12 col-md-4 izquierda">
-                        <h5 className="text-center">Bienvenido a Social-Students</h5>
+                        <h5 className="text-center mt-1 mt-md-5">Bienvenido a Social-Students</h5>
                         <p className="p-2 text-center">
                             Aprende Desarrollo Web totalmente gratis. S-S decea que tenga un conocimiento exacto.
                         </p>
@@ -55,6 +70,19 @@ const Login = () => {
                     </svg>
 
                         <h3 className="text-center">Iniciar Session</h3>
+
+                            <div className='row justify-content-center session-redes p-1'>
+                                <div onClick={google} className='col-2 p-2 border border-success rounded-pill'>
+                                    <Icon name='google' size='large' />
+                                </div>
+                                <div onClick={facebook} className='col-2 p-2 border border-success rounded-pill'>
+                                    <Icon name='facebook official' size='large' />
+                                </div>
+                                <div onClick={twitter} className='col-2 p-2 border border-success rounded-pill'>
+                                    <Icon name='twitter' size='large' />
+                                </div>
+                            </div>
+
                         <p className="p-2">Tu conocimiento espera..!</p>
                         <form>
                             <input type="email" className="form-control" placeholder="Usuario:" required /><Icon name="user" className="icon_user"/>
