@@ -15,6 +15,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.2",
+    "codemirror": "^5.52.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
@@ -30,8 +31,13 @@
     "passport-twitter": "^1.0.4",
     "react": "^16.12.0",
     "react-awesome-player": "^1.0.11",
+    "react-codemirror": "^1.0.0",
+    "react-codemirror2": "^7.1.0",
     "react-dom": "^16.12.0",
     "semantic-ui-react": "^0.88.2",
     "video.js": "^7.6.6"
+  },
+  "devDependencies": {
+    "@types/codemirror": "0.0.91"
   }
 }

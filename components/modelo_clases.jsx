@@ -31,14 +31,14 @@ const ModelaClases = (props) => {
                         </div>
                     </div>
                 </div>
-
-                <div className="dictado_por border p-2 row">
+<hr/>
+                <div className="dictado_por p-1 row">
                     <div className='col'>
                         Dictado por: &nbsp; &nbsp;
                         <Popup
                             content="Andres"
                             key="Andres"
-                            header="Andres"
+                            header="Dictado"
                             trigger={<Image src="https://static.platzi.com/media/avatars/avatars/programandres_415dc47e-e96a-4a50-9f8d-00a815095ffd.jpg" avatar />}
                         />
                     </div>

@@ -7,7 +7,7 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 passport.use(new FacebookStrategy({
     clientID: config.facebookPublic,
     clientSecret: config.facebookSecret,
-    callbackURL: "http://localhost:3000/api_F/auth/facebook/callback"
+    callbackURL: "https://wolman.now.sh/api_F/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     /*User.findOrCreate({ facebookId: profile.id }, function (err, user) {

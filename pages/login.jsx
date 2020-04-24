@@ -30,15 +30,15 @@ var ventana_crear = document.querySelector('.fila_crear_cuenta');
 }
 
 const google = async () => {
-    window.open('/api/auth/google', '_blank');
+    window.open('/api/auth/google', 'Entrar con Google', "width=620,height=600,scrollbars=NO");
 }
 
 const twitter = async () => {
-    window.open('/api_T/auth/twitter', '_blank');
+    window.open('/api_T/auth/twitter', 'Entrar con twitter', "width=620,height=600,scrollbars=NO");
 }
 
 const facebook = async () => {
-    window.open('/api_F/auth/facebook', '_blank');
+    window.open('/api_F/auth/facebook', 'Entrar con Facebook', "width=620,height=600,scrollbars=NO");
 }
 
 const Login = () => {
@@ -72,14 +72,14 @@ const Login = () => {
                         <h3 className="text-center">Iniciar Session</h3>
 
                             <div className='row justify-content-center session-redes p-1'>
-                                <div onClick={google} className='col-2 p-2 border border-success rounded-pill'>
-                                    <Icon name='google' size='large' />
+                                <div onClick={google} className='col-2 p-2'>
+                                    <Icon name='google' size='big' />
                                 </div>
-                                <div onClick={facebook} className='col-2 p-2 border border-success rounded-pill'>
-                                    <Icon name='facebook official' size='large' />
+                                <div onClick={facebook} className='col-2 p-2'>
+                                    <Icon name='facebook official' size='big' />
                                 </div>
-                                <div onClick={twitter} className='col-2 p-2 border border-success rounded-pill'>
-                                    <Icon name='twitter' size='large' />
+                                <div onClick={twitter} className='col-2 p-2'>
+                                    <Icon name='twitter' size='big' />
                                 </div>
                             </div>
 

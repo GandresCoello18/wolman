@@ -7,7 +7,7 @@ const TwitterStrategy = require('passport-twitter').Strategy;
 passport.use(new TwitterStrategy({
     consumerKey: config.twitterPublic,
     consumerSecret: config.twitterSecret,
-    callbackURL: "http://127.0.0.1:3000/api_T/auth/twitter/callback"
+    callbackURL: "https://wolman.now.sh/api_T/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     /*User.findOrCreate({ twitterId: profile.id }, function (err, user) {

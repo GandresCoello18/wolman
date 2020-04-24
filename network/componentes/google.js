@@ -7,7 +7,7 @@ const GoogleStrategy = require('passport-google-oauth2').Strategy;
 passport.use(new GoogleStrategy({
     clientID : config.googlePublic,
     clientSecret: config.googleSecret,
-    callbackURL: "http://127.0.0.1:3000/api/auth/google/callback",
+    callbackURL: "https://wolman.now.sh/api/auth/google/callback",
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {

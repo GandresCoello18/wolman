@@ -12,7 +12,6 @@ const SEO = (props) => {
                 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
                 <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
                 <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
-                <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
             </Helmet>
         </>
     );
