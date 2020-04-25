@@ -1,15 +1,33 @@
 import React from "react";
-import Seo from '../components/seo';
 import NotificacionMenu from './notificacion_menu';
 import SearchInput from './search_input';
 import LabelAvatar from './label_avatar';
 import { Menu, Icon, Dropdown } from 'semantic-ui-react';
 import Link from "next/link";
+import axios from 'axios';
+const { dominio_developer, dominio_production } = require('../util/domino');
+const { getCookie, createCookie, setCookie } = require('../util/cookie');
 import "../assets/styles/components/header.scss";
+
+
 
 class Head extends React.Component{
     state = {
         activeItem: 'home'
+    }
+
+    async componentDidMount(){
+        if(getCookie('access-token') == null){
+            /*const anonimo = await axios({
+                method: 'post',
+                url: `${dominio_developer()}/api/login/autenticacion`,
+                data: { 
+                    correo: "anonimo@gmail.com",
+                    clave: "rottweilas"
+                }
+            });*/
+            createCookie('access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlHV3NKT0M4biIsImNvcnJlbyI6ImFub25pbW9AZ21haWwuY29tIiwiY2xhdmUiOiIkMmEkMTAkZm9BTDFBTGovdHhjcDdSSmREVUNvLk02Z0ZIYVFFbkdiZG1ia3hNU3J3dVN0cTlQOVZHcTIiLCJpYXQiOjE1ODc3NzE1MzR9.rKMWXnVmGMFoJL_5S66yxp1WFpodxLWiHeyBM0Suyuc');
+        }
     }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -34,6 +52,19 @@ class Head extends React.Component{
                 menu[i].style.display = "";
             }
         }
+    }
+
+    cerrar_session = async () => {
+        /*const anonimo = await axios({
+            method: 'post',
+            url: `${dominio_developer()}/api/login/autenticacion`,
+            data: { 
+                correo: "anonimo@gmail.com",
+                clave: "rottweilas"
+            }
+        });*/
+        setCookie('access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlHV3NKT0M4biIsImNvcnJlbyI6ImFub25pbW9AZ21haWwuY29tIiwiY2xhdmUiOiIkMmEkMTAkZm9BTDFBTGovdHhjcDdSSmREVUNvLk02Z0ZIYVFFbkdiZG1ia3hNU3J3dVN0cTlQOVZHcTIiLCJpYXQiOjE1ODc3NzE1MzR9.rKMWXnVmGMFoJL_5S66yxp1WFpodxLWiHeyBM0Suyuc');
+        window.location.reload();
     }
     
     render(){
@@ -120,10 +151,10 @@ class Head extends React.Component{
                                     <Dropdown item text='Opciones' 
                                         className='mt-2'>
                                         <Dropdown.Menu>
-                                            <Dropdown.Item>Cambiar contraseña</Dropdown.Item>
                                             <Dropdown.Item>Modo Nocturno</Dropdown.Item>
                                             <Dropdown.Item>Mensajes Directos</Dropdown.Item>
                                             <Dropdown.Item>Ruta de Cursos</Dropdown.Item>
+                                            <Dropdown.Item onClick={this.cerrar_session}>Cerrar Session</Dropdown.Item>
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </a>    
