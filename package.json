@@ -1,6 +1,10 @@
 {
   "name": "create-next-example-app",
   "description": "A Next.js starter app.",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.14.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/zeit/now/tree/master/examples/nextjs"
