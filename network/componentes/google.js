@@ -2,13 +2,12 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const { config } = require('../../config/index');
-const GoogleStrategy = require('passport-google-oauth2').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 passport.use(new GoogleStrategy({
     clientID : config.googlePublic,
     clientSecret: config.googleSecret,
-    callbackURL: "/api/auth/google/callback",
-    passReqToCallback   : true
+    callbackURL: "/api/auth/google/callback"
   },
   function(request, accessToken, refreshToken, profile, done) {
     /*User.findOrCreate({ googleId: profile.id }, function (err, user) {
