@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const config = {
     dev: process.env.NODE_ENV !== 'production',
-    port: process.env.PORT || 9000,
+    port: process.env.PORT || 3000,
     googlePublic: process.env.GOOGLE_PUBLIC,
     googleSecret: process.env.GOOGLE_SECRET,
     twitterPublic: process.env.TWITTER_PUBLIC,

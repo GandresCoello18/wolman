@@ -1,16 +1,44 @@
 import React from 'react';
+import axios from 'axios';
+const { dominio_developer } = require('../util/domino');
 import { Popup, Image } from 'semantic-ui-react';
 
-const LabelAvatar = (props) => {
-    return(
-        <>
-            <Popup
-                key="Andres Coello"
-                header="Andres Coello"
-                trigger={<Image style={{ cursor: 'pointer' }} src="https://static.platzi.com/media/avatars/avatars/programandres_415dc47e-e96a-4a50-9f8d-00a815095ffd.jpg" avatar />}
-            /> Andres Coello
-        </>
-    );
+class LabelAvatar extends React.Component {
+    state = {
+        foto_avatar: '/static/hombre-0.jpg',
+        nombre_user: 'anonimo',
+        key: 'pkx8otovU'
+    }
+
+    componentDidMount(){
+        setTimeout( async () => {
+            const av = await axios({
+                method: 'get',
+                url: `${dominio_developer()}/api/usuario/${this.props.llave}`
+            });
+
+
+            if(av.data[0] != undefined){
+                this.setState({ 
+                    foto_avatar: av.data[0].avatar,
+                    nombre_user: av.data[0].nombre_usuario,
+                    key: av.data[0].id_user
+                });
+            }
+        },1000);
+    }
+
+    render(){
+        return(
+            <>
+                <Popup
+                    key={this.state.key}
+                    header={this.state.nombre_user}
+                    trigger={<Image style={{ cursor: 'pointer' }} src={this.state.foto_avatar} avatar />}
+                /> {this.state.nombre_user}
+            </>
+        );
+    }
 }
 
 export default LabelAvatar;

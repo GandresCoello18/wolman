@@ -16,7 +16,7 @@ class Encuesta extends React.Component {
                     header='Tomate tu tiempo'
                     centered
                     content={
-                        <iframe src="https://docs.google.com/forms/d/11-Y4X5BFphq6Bi2tgr3atdF-es-Jc4JLFIT0kH2emIQ/viewform?embedded=true" style={{width: "100%", height: "100%"}}>
+                        <iframe src="https://docs.google.com/forms/d/11-Y4X5BFphq6Bi2tgr3atdF-es-Jc4JLFIT0kH2emIQ/viewform?embedded=true" style={{width: "90%", height: "100%", margin: 'auto', position: 'relative'}}>
                             ....Cargando....
                         </iframe>
                     }

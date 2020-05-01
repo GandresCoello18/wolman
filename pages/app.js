@@ -13,19 +13,25 @@ import "../assets/styles/container/index.scss";
 import "../index.scss";
 import Seo from '../components/seo';
 import Error from './_error.js';
+const { setCookie, getCookie } = require('../util/cookie');
+
 
 class App extends React.Component{
 
-    static getInitialProp({ res }){
+    static async getInitialProps({ res, query }){
             res.statusCode = 503;
-            return { statusCode: 503 }
+            const session = query.session || null;
+            return { statusCode: 503, session }
+    }
+
+    componentDidMount(){
+        if(this.props.session != null){
+            setCookie('access-token', this.props.session);
+        }
     }
 
 
     render(){
-        if(this.props.statusCode == 503){
-            return <Error statusCode={503} />
-        }
         return(
             <>
                 <Seo title='Wolman | Desarrollo Web | Aplicaciones y sitios' />

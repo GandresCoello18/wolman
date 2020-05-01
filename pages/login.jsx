@@ -39,9 +39,6 @@ class Login extends React.Component {
         console.log("segunda");
     }
     
-    google = async () => {
-        window.open('/api/auth/google', 'Entrar con Google', "width=620,height=600,scrollbars=NO");
-    }
     
     twitter = async () => {
         window.open('/api_T/auth/twitter', 'Entrar con twitter', "width=620,height=600,scrollbars=NO");
@@ -150,14 +147,14 @@ class Login extends React.Component {
                             <h3 className="text-center">Iniciar Session</h3>
     
                                 <div className='row justify-content-center session-redes p-1'>
-                                    <div onClick={this.google} className='col-2 p-2'>
-                                        <Icon name='google' size='big' />
+                                    <div className='col-2 p-2'>
+                                        <a href='/api/auth/google'><Icon name='google' size='big' /></a>
                                     </div>
                                     <div onClick={this.facebook} className='col-2 p-2'>
                                         <Icon name='facebook official' size='big' />
                                     </div>
-                                    <div onClick={this.twitter} className='col-2 p-2'>
-                                        <Icon name='twitter' size='big' />
+                                    <div className='col-2 p-2'>
+                                        <a href='/api_T/auth/twitter'><Icon name='twitter' size='big' /></a>
                                     </div>
                                 </div>
     

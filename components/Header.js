@@ -4,8 +4,7 @@ import SearchInput from './search_input';
 import LabelAvatar from './label_avatar';
 import { Menu, Icon, Dropdown } from 'semantic-ui-react';
 import Link from "next/link";
-import axios from 'axios';
-const { dominio_developer, dominio_production } = require('../util/domino');
+const { anonimo_post, validar_vida_token, llamar_datos_generales_user } = require('../util/peticiones');
 const { getCookie, createCookie, setCookie } = require('../util/cookie');
 import "../assets/styles/components/header.scss";
 
@@ -13,21 +12,29 @@ import "../assets/styles/components/header.scss";
 
 class Head extends React.Component{
     state = {
-        activeItem: 'home'
+        activeItem: 'home',
+        key: ''
     }
 
-    async componentDidMount(){
-        if(getCookie('access-token') == null){
-            /*const anonimo = await axios({
-                method: 'post',
-                url: `${dominio_developer()}/api/login/autenticacion`,
-                data: { 
-                    correo: "anonimo@gmail.com",
-                    clave: "rottweilas"
+    componentDidMount(){
+
+        llamar_datos_generales_user().then( data => {
+            
+            this.setState({
+                key: data.data[0].id_user
+            });
+        
+        }).catch( err => console.log(new Error(err) + 'error en pedir datos user head js'))
+
+        validar_vida_token()
+            .then( info => {
+                console.log(info.data.feeback);
+                
+                if(info.data.feeback != 'Token activo'){
+                    setCookie('access-token', `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoidnl2cHZnZHUtIiwiaWF0IjoxNTg4Mjg1NDIzfQ.TSwrmASJgoRxLxx3X5h-VDHlqbgiO01rwcEA77cBn-4`);
                 }
-            });*/
-            createCookie('access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlHV3NKT0M4biIsImNvcnJlbyI6ImFub25pbW9AZ21haWwuY29tIiwiY2xhdmUiOiIkMmEkMTAkZm9BTDFBTGovdHhjcDdSSmREVUNvLk02Z0ZIYVFFbkdiZG1ia3hNU3J3dVN0cTlQOVZHcTIiLCJpYXQiOjE1ODc3NzE1MzR9.rKMWXnVmGMFoJL_5S66yxp1WFpodxLWiHeyBM0Suyuc');
-        }
+            
+            }).catch( err => console.log(new Error(err) + ' erro en function validar token' ));
     }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -54,17 +61,9 @@ class Head extends React.Component{
         }
     }
 
-    cerrar_session = async () => {
-        /*const anonimo = await axios({
-            method: 'post',
-            url: `${dominio_developer()}/api/login/autenticacion`,
-            data: { 
-                correo: "anonimo@gmail.com",
-                clave: "rottweilas"
-            }
-        });*/
-        setCookie('access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImlHV3NKT0M4biIsImNvcnJlbyI6ImFub25pbW9AZ21haWwuY29tIiwiY2xhdmUiOiIkMmEkMTAkZm9BTDFBTGovdHhjcDdSSmREVUNvLk02Z0ZIYVFFbkdiZG1ia3hNU3J3dVN0cTlQOVZHcTIiLCJpYXQiOjE1ODc3NzE1MzR9.rKMWXnVmGMFoJL_5S66yxp1WFpodxLWiHeyBM0Suyuc');
-        window.location.reload();
+    cerrar_session = () => {
+        setCookie('access-token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoidnl2cHZnZHUtIiwiaWF0IjoxNTg4Mjg1NDIzfQ.TSwrmASJgoRxLxx3X5h-VDHlqbgiO01rwcEA77cBn-4');
+        window.location.href = '/app';
     }
     
     render(){
@@ -72,6 +71,7 @@ class Head extends React.Component{
         return(
             <>  
                 <header className="container-fluid">
+                <a href="https://www.freepik.es/fotos-vectores-gratis/negocios">Vector de Negocios creado por freepik - www.freepik.es</a>
                     <div className="row">
                         <nav className="col-12">
                             <div className="menu-hamburguesa" onClick={this.open}>
@@ -184,7 +184,7 @@ class Head extends React.Component{
                                             as='span'
                                         >
 
-                                            <LabelAvatar />
+                                            <LabelAvatar llave={this.state.key} />
 
                                         </Menu.Item>
                                     </a>
